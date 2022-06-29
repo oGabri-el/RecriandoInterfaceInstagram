@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    font-size: 10px;
+    /* align-content: 10px;
+    box-sizing: border-box; */
+}
+
+body {
+    /* display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center; */
+    background: rgb(33, 23, 23);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+    height: 600px;
+    
+}
+
+aside {
+    grid-area: aside;
+    border-radius: 20px;
+}
+
+.formContainer {
+    grid-area: form;
+    background-color: transparent;
+    border-radius: 10px;
+
+}
+
+#signup {
+    border-radius: 10px;
+    grid-area: signup;
+    width: 250px;
+    height: fit-content;
+    background-image: linear-gradient(rgb(255, 0, 255), rgb(255, 0, 140));
+
+}
+
+#getApp {
+    position: relative;
+    bottom: 100px;
+    grid-area: getApp;
+    width: 300px;
+    
+}
+
+#contacts {
+    position: relative;
+    top: 50px;
+    grid-area: contacts;
+    width: auto;
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'aside form'
+        'aside form'
+        'aside signup'
+        'aside getApp'
+        'contacts contacts'
+    ;
+    gap: 10px;
+}
+
+.borderContent {
+    padding: 25px;
+    border: solid 1px white;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    opacity: .9;
+}
+
+a {
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+.smallText {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.asideContainer>figure>img:nth-child(1) {
+    height: 250px;
+    position: relative;
+    top: 250px;
+    left: 50px;
+    transition: ease 500ms;
+    animation: circleAround2 5000ms ease-in-out infinite;
+
+}
+
+.asideContainer>figure>img:nth-child(2) {
+    position: relative;
+    height: 50px;
+    bottom: 50px;
+    
+    animation: circleAround 5000ms ease-in-out infinite;
+}
+
+@keyframes circleAround{
+    40% {transform: translate(-8px, 5px) rotate(30deg);}
+}
+
+@keyframes circleAround2{
+    40% {transform: translate(5px, -5px) rotate(2deg);}
+}
+
+.asideContainer>figure>img:nth-child(3) {
+    position: relative;
+    background-image: linear-gradient(rgb(0, 225, 255), rgb(255, 0, 247));
+    bottom: 250px;
+    box-shadow:  5px 5px 5px 20px black inset;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+
+
+.formContainer {
+    display: flex;
+    width: 250px;
+    border: solid 1px;
+    padding: 25px;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    background-image: linear-gradient(rgb(0, 225, 255), rgb(255, 0, 247));
+}
+
+.formContainer>form {
+    display: flex;
+    flex-flow: column wrap;
+    flex-grow: 1;
+    padding: 25px;
+    gap: 10px;
+    text-align: center;
+    
+}
+
+form>input {
+    height: 25px;
+}
+
+.instagramLogo {
+    background-color:transparent;
+    border-radius: 10px;
+}
+
+.linkApp {
+    padding: 5px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.contacts {
+    
+    width: 100px;
+    height: 100px;
+    text-align: center;
+
+}
+
+#getApp>figure {
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .asideContainer {
+        display: none;
+    }
+
+    main {
+        transition: ease 500ms;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        flex-flow: wrap column;
+    }
+
+    .container {
+        margin-top: 50px;
+        width: auto;
+        height: 600px;
+        overflow: scroll;
+    }
+    .contacts {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+
+    }
+
+    .contacts>p {
+        text-align: start;
+    }
+
+    #getApp {
+        position: static;
+    }
+
+}
